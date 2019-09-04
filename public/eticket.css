@@ -1,0 +1,108 @@
+.eticket-div {
+    border: 1px solid #CCC;
+    padding:20px;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    -moz-box-shadow: 4px 1px 3px 0px #ccc;
+    -webkit-box-shadow: 4px 1px 3px 0px #ccc;
+    box-shadow: 4px 1px 3px 0px #ccc;
+}
+
+.print-version {
+    -moz-box-shadow: inset 0px 1px 0px 0px #f5978e;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #f5978e;
+    box-shadow: inset 0px 1px 0px 0px #f5978e;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb0101), color-stop(1, #c62d1f) );
+    background: -moz-linear-gradient( center top, #fb0101 5%, #c62d1f 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb0101', endColorstr='#c62d1f');
+    background-color: #fb0101;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-left-radius: 5px;
+    text-indent: 0;
+    border: 1px solid #d02718;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 25px;
+    line-height: 25px;
+    width: 131px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0px #810e05;
+}
+
+.eticket-table {
+    color: #414042;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eticket-table .table-header {
+    background: #969494;
+    color: white;
+    font-weight: 700;
+}
+
+.eticket-table td {
+  padding: 2px 10px 2px 2px
+}
+
+.eticket-div table {
+  width:100%;
+}
+
+.eticket-div .name {
+    font-weight:bold;
+    font-size:15px;
+}
+
+.eticket-table p {
+    font-size: 11px;
+}
+
+.eticket-table .big-font {
+    font-size: 14px;
+}
+
+.a4page {
+         height:297mm;
+         width:210mm;
+         margin: 2px auto 2px auto;
+         page-break-after: always;
+}
+
+ .a4page  .eticket-div {
+            width: 100%;
+            margin-right:0px;
+            -moz-box-shadow: 0px 0px 0px 0px #ccc;
+            -webkit-box-shadow: 0px 0px 0px 0px #ccc;
+            box-shadow: 0px 0px 0px 0px #ccc;
+            border:0px;
+        }
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.print-version-container {
+    float:right;
+    padding-right:3%;
+    margin-top: 3px;
+}
+
+.invoice-page-break {
+    page-break-before: always;
+}

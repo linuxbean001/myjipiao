@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/nifty.min.css">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/main.css">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/page.css">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/mjp.css">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/eticket.css">
+  <script src="%PUBLIC_URL%/js/jquery.js"></script>
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>T-Solution Demo</title>
+</head>
+
+<body>
+  <noscript>
+      You need to enable JavaScript to run this app.
+  </noscript>
+  <div style="position:absolute; top:0; right:0">
+    <button class="btn btn-warning btn-icon btn-circle icon-lg fa fa-comment" data-target="#chat-modal" data-toggle="modal"></button>
+  </div>
+
+
+  <div id="root"></div>
+  <div id='token' style="display:none;">42046_fd6baa39294F</div>
+
+  <div class="modal fade" id="chat-modal" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!--Modal header-->
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">欢迎您的到访</h4>
+      </div>
+
+      <!--Modal body-->
+      <div class="modal-body">
+        <div>欢迎来到我们的 LiveChat! 在开始聊天前请填写下表</div>
+        <div class="pad-ver">
+          <div class="form-group pad-ver">
+            <label class="col-sm-3 control-label text-lg" for="mjp-name">名字</label>
+            <div class="col-sm-9">
+              <input type="text" placeholder="名字" id="mjp-name" class="form-control" style="font-size:1.2em">
+            </div>
+          </div>
+					<div class="form-group pad-ver">
+						<label class="col-sm-3 control-label text-lg" for="mjp-email">Email</label>
+						<div class="col-sm-9">
+							<input type="email" placeholder="Email" id="mjp-email" class="form-control"  style="font-size:1.2em">
+						</div>
+					</div>
+      </div>
+
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">等下再说</button>
+        <button data-dismiss="modal" id="mjp-start-chat" class="btn btn-warning">开始对话</button>
+      </div>
+    </div>
+  </div>
+</div>
+   <script src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+   <script src="%PUBLIC_URL%/js/nifty.min.js"></script>
+   <script src="%PUBLIC_URL%/js/uimodals.js"></script>
+   <script>
+    $("#mjp-start-chat").click(function(){
+      var param ={
+        email: $("#mjp-email").val().trim(),
+        name: $("#mjp-name").val().trim(),
+        token: $("#token").text().trim()
+      }
+
+      $.post("/service/GetSubscribe",param,function(result){
+        //$("span").html(result);
+      });
+    })
+   </script>
+   <div id="infoURL" style="display:none">https://www.myjipiao.co.nz/info?type={0}&lang={1}&device={2}</div>
+</body>
+</html>

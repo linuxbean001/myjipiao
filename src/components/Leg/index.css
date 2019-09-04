@@ -1,0 +1,12 @@
+.step-color{
+    color: #FFF
+}
+.step-color-padding{
+    color: #FFF;
+    padding-top: 21px
+}
+.step-delete{
+    color: #FFF;
+    padding-left: 88%;
+    cursor: pointer;
+}

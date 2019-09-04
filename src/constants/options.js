@@ -1,0 +1,1 @@
+export const OPTIONS_UPDATE = 'OPTIONS_UPDATE'
