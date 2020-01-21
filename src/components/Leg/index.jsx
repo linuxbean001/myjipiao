@@ -57,6 +57,7 @@ class Leg extends React.Component {
   deleteTrip=()=>{
 
     const {defaultMp} = this.state;
+    console.log('defaultMp',defaultMp)
     const id= 6;
     defaultMp.pop(id);
     defaultMp.pop(id)
@@ -985,26 +986,40 @@ class Leg extends React.Component {
         if(!(index==7 && this.state.defaultMp.length>8)){
           return <div><p className="step-color-padding"></p><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
-          return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
+          if(this.state.defaultMp.length>12){
+            return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div>
+            {/* <p className="step-delete" onClick={this.deleteTrip}>delete</p> */}
+            </div>
+          }else{
+            return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div></div>
+          }
         }
       }
 
       if(index==11){
         if(!(index==11 && this.state.defaultMp.length>12)){
-          return <div><p className="step-color-padding"></p><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
+          return <div style={{paddingTop:"14px"}}><span className="step-delete" onClick={this.deleteTrip}>delete</span><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
-          return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
+          if(this.state.defaultMp.length>16){
+            return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div>
+            {/* <p className="step-delete" onClick={this.deleteTrip}>delete</p> */}
+            </div>
+          }else{
+            return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div></div>
+          }
         }
       }
       if(index==15){
         if(!(index==15 && this.state.defaultMp.length>16)){
-          return <div><p className="step-color-padding"></p><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
+          return <div style={{paddingTop:"14px"}}><span className="step-delete" onClick={this.deleteTrip}>delete</span><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
-          return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
+          return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div>
+          {/* <p className="step-delete" onClick={this.deleteTrip}>delete</p> */}
+          </div>
         }
       }
       if(index==19){
-        return <div style={{paddingTop: '17px'}}><p className="step-delete" onClick={this.deleteTrip}></p> <div className="fsr-cell">---</div></div>
+        return <div style={{paddingTop: '17px'}}><p className="step-delete" onClick={this.deleteTrip}></p> <div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
       }
 
       
