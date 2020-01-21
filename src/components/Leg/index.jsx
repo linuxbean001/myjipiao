@@ -158,25 +158,25 @@ class Leg extends React.Component {
 
     switch(this.state.fsrIndex) {
       case 1:
-      this.setState({to_city1:this.getCityName(nextProps.fsr.to_city)})
+      this.setState({to_city1:this.getCityName(nextProps.fsr.to_city),from_city4:this.getCityName(nextProps.fsr.to_city)})
         break;
         case 2:
         this.setState({departure_date2:this.getFsr().departure_date})
           break;
       case 5:
-      this.setState({to_city5:this.getCityName(nextProps.fsr.to_city)})
+      this.setState({to_city5:this.getCityName(nextProps.fsr.to_city),from_city8:this.getCityName(nextProps.fsr.to_city)})
         break;
         case 6:
         this.setState({departure_date6:this.getFsr().departure_date})
           break;
         case 9:
-        this.setState({to_city9:this.getCityName(nextProps.fsr.to_city)})
+        this.setState({to_city9:this.getCityName(nextProps.fsr.to_city),from_city12:this.getCityName(nextProps.fsr.to_city)})
         break;
         case 10:
         this.setState({departure_date10:this.getFsr().departure_date})
         break;
         case 13:
-        this.setState({to_city13:this.getCityName(nextProps.fsr.to_city)})
+        this.setState({to_city13:this.getCityName(nextProps.fsr.to_city),from_city16:this.getCityName(nextProps.fsr.to_city)})
         break;
         case 14:
         this.setState({departure_date14:this.getFsr().departure_date})
