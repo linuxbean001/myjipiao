@@ -12,7 +12,7 @@
 }
 
 .center-content {
-  width: 1618px;
+  width: 100%;
   margin: 0px auto;
 }
 
@@ -21,7 +21,10 @@
 }
 
 .home-page {
-    background: url("/images/bg.png") no-repeat;
+    width: 100%;
+    height: 100%;
+    background: url("/images/bg.png");
+    background-size: cover;
 }
 
 .page-disabled:before {
@@ -464,13 +467,14 @@ body .ant-dropdown-menu a:hover {
 }
 
 .fsr-options {
-  margin-top:5px;
+  margin-left: 12.5%;
+  margin-top: 5px;
   padding: 25px;
-  width:100%;
+  width: 75.5%;
   background-color: #FFF;
-  position:absolute;
+  position: absolute;
   z-index: 1;
-  left:0;
+  left: 0;
 }
 
 .left-float-div {
@@ -588,7 +592,7 @@ body .ant-dropdown-menu a:hover {
   position: absolute;
   z-index:3000;
   top:-15px;
-  right:5px;
+  right: -125px;
 }
 
 .mb .close-btn {
@@ -653,7 +657,7 @@ body .ant-dropdown-menu a:hover {
 /* footer*/
 .blue-box {
   background: #232F67;
-  padding-top: 125px;
+  padding-top: 20px;
   color:#FFF;
 }
 
@@ -866,7 +870,8 @@ body {
 }
 
 .airline-logo {
-  padding-bottom: 5px;
+  margin-right:0;
+  width: 45px;
 }
 
 .mb .airline-logo {
@@ -1087,7 +1092,9 @@ body {
 }
 
 .airline-logo {
-  width:20px;
+  margin-right:0;
+  width: 45px;
+
 }
 
 /*cart*/
@@ -1397,7 +1404,8 @@ td.line {
 }
 
 .airline-logo {
-  margin-right:15px;
+  margin-right:0;
+  width: 45px;
 }
 
 .av-table .time {

@@ -125,6 +125,7 @@ class Home extends React.Component {
   getHtml() {
     const state = this.state
     let isPC = this.getReduxDataByID('system').device =='pc'
+    const BGImage = `${process.env.PUBLIC_URL}/images/bg.png`;
     if(state.isBusy)
     {
       return <SpinDiv keywordFn={(item)=> {return this.getKeyword(item)}}/>
@@ -141,25 +142,29 @@ class Home extends React.Component {
         {
           let divClass = state.isDisabled? 'home-page page-disabled':'home-page'
           return (
-            <div className={divClass}>
-              <div className= 'main-div-pc'>
-              {
-                isPC
-                ?  <div className="slogan-container" style={{clear:'both'}}>
-                    <p className='text-center slogan'>{this.getKeyword("kWorldTouch")}</p>
-                    <p className='text-center slogan'>{this.getKeyword("kMJPForYou")}</p>
-                  </div>
-                : <div></div>
-              }
-
+            <React.Fragment>
+              <section id="middle-content-main" className={divClass}>
                   <div>
-                     <SearchPanel startSearch={this.startSearch.bind(this)}/>
-                  </div>
+                      <div className= 'main-div-pc'>
+                      {
+                        isPC
+                        ?  <div className="slogan-container" style={{clear:'both'}}>
+                            <p className='text-center slogan'>{this.getKeyword("kWorldTouch")}</p>
+                            <p className='text-center slogan'>{this.getKeyword("kMJPForYou")}</p>
+                          </div>
+                        : <div></div>
+                      }
 
-                  <AirlineSpecialPrice startSearch={this.startSearch.bind(this)}/>
-              </div>{/* end of main-div-pc*/}
+                          <div>
+                             <SearchPanel startSearch={this.startSearch.bind(this)}/>
+                          </div>
 
-            </div>
+                          <AirlineSpecialPrice startSearch={this.startSearch.bind(this)}/>
+                      </div>{/* end of main-div-pc*/}
+
+                    </div>
+              </section>
+            </React.Fragment>
           )
         }
         else {

@@ -7,6 +7,20 @@
 }
 .step-delete{
     color: #FFF;
-    padding-left: 88%;
+    padding-left: 86%;
     cursor: pointer;
+    padding-top: 4px;
+}
+.search-button{
+    border: none;
+    background: #b69750;
+    height: 50px;
+    vertical-align: middle;
+    font-size: 24px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+}
+button.ant-btn.search-button.ant-btn-primary {
+    background-color: #b69750;
 }

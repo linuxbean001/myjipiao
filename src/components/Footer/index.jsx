@@ -97,7 +97,7 @@ class Footer extends React.Component {
               <div className="footer-div">
                 <div className="blue-box">
                   <div className="middle-box">
-                     <table className="frame-table">
+                     <table className="frame-table" cellpadding="1px" cellspacing="3px">
                        <tbody>
                        <tr>
                          <td className = "td-left">

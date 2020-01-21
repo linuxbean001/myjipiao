@@ -17,7 +17,7 @@ const initialState = {
   currencyList: ['AUD', 'NZD', 'USD','CAD','CNY','HKD', 'SGD','IDR'],
   menu_top: ['kCustomerService','kGuide', 'kResponse', 'kFocus', 'kTopUp'],
   menu_top_right:['kSearchHistory', 'kMyOrder', 'kLogin'],
-  menu_normal: ['kHome', 'kFareSearch', 'kNewZealandTour', 'kAustraliaTour'],
+  menu_normal: ['kHome', 'kFareSearch'],
   month_en: ['',"Jan", "Feb", "Mar", "Apr",
             "May", "Jun", "July", "Aug",
           "Sep", "Oct", "Nov", "Dec"],
@@ -25,8 +25,6 @@ const initialState = {
   keywords:[
     {Name:'kHome', En:'Home', Cn:'首页'},
     {Name:'kFareSearch', En:'Fare Search', Cn:'机票查询'},
-    {Name:'kNewZealandTour', En:'Newzealand Tour', Cn:'新西兰本地游'},
-    {Name:'kAustraliaTour', En:'Australia Tour', Cn:'澳洲本地游'},
     {Name:'kMYJIPIAO', En:'MYJIPIAO', Cn:'MYJIPIAO'},
     {Name:'kEmailReg', En:'Email Regist', Cn:'邮件订阅'},
     {Name:'kPayment', En:'Payment Method', Cn:'支付方式'},
@@ -58,15 +56,6 @@ const initialState = {
     title: 'kFareSearch',
     icon: 'flysearch',
     path: '/faresearch'
-  }, {
-    title: 'kNewZealandTour',
-    icon: 'nztour',
-    path: '/newzealand'
-  },
-  {
-    title: 'kAustraliaTour',
-    icon: 'autour',
-    path: '/Australia'
   },
   {
     title: 'kCustomerService',

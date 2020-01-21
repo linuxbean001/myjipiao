@@ -147,50 +147,45 @@ class HomeHeader extends React.Component {
 
               </div>
               <div className = "sub-header">
-                  <Row className='center-content'>
-                    <Col span="3"></Col>
-                    <Col span="18">
-                        <Row>
-                          <Col span="6">
-                            <div className="text-right">
+                     <table cellpadding="0px" cellspacing="0px">
+                       <tr>
+                         <td width="33%"></td>
+                         <td align="left" valign="top">
                               <img src='/images/myjipiaologo.jpg'/>
-                            </div>
-                          </Col>
-                          <Col span="18">
-                          <nav className="navbar navbar-mjp">
-                          <div className="container-fluid">
-                            <div className="collapse navbar-collapse">
-                            <ul className="nav navbar-nav">
-
-                            {
-                              this.props.options.menu_normal.map((item,index)=>{
-                                let obj = this.getMenu(item)
-                                //console.log(item, obj)
-                                if (obj != null)
-                                {
-                                  if(index == 0)
+                          </td>
+                          <td className= "post-left">
+                              <nav className="navbar navbar-mjp">
+                              <div className="container-fluid">
+                                <div className="collapse navbar-collapse">
+                                  <ul className="nav navbar-nav">
                                   {
-                                    return <li className="mjp-nav-item" key={index} onClick={this.goHome.bind(this)}>
-                                           <Icon type={obj.icon} />{this.getKeyword(obj.title)}
-                                          </li>
-                                  }
-                                  else {
-                                    return <li className="mjp-nav-item"  key={index}>
-                                           <img src={'/images/icon/'+obj.icon+'.png'} />{this.getKeyword(obj.title)}
-                                          </li>
-                                  }
-                                }
-                              })
-                            }
-                            </ul>
-                            </div>
-                            </div>
-                            </nav>
-                          </Col>
-                        </Row>
-                    </Col>
-                    <Col span="3"></Col>
-                  </Row>
+                                      this.props.options.menu_normal.map((item,index)=>{
+                                        let obj = this.getMenu(item)
+                                        //console.log(item, obj)
+                                        if (obj != null)
+                                        {
+                                          if(index == 0)
+                                          {
+                                            return <li className="mjp-nav-item" key={index} onClick={this.goHome.bind(this)}>
+                                                   <Icon type={obj.icon} />{this.getKeyword(obj.title)}
+                                                  </li>
+                                          }
+                                          else {
+                                            return <li className="mjp-nav-item"  key={index}>
+                                                   <img src={'/images/icon/'+obj.icon+'.png'} />{this.getKeyword(obj.title)}
+                                                  </li>
+                                          }
+                                        }
+                                      })
+                                    }
+                                    </ul>
+                                  </div>
+                                </div>
+                                </nav>
+                           </td>
+                           <td></td>
+                       </tr>
+                    </table>
               </div>
             </div>
           )

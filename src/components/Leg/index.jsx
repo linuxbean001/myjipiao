@@ -152,13 +152,84 @@ class Leg extends React.Component {
 
     if(nextProps.fsr.from_city != this.props.fsr.from_city)
     {
-      this.setState({from_city:this.getCityName(nextProps.fsr.from_city)})
+      // this.setState({from_city:this.getCityName(nextProps.fsr.from_city)})
     }
 
-    if(nextProps.fsr.to_city != this.props.fsr.to_city)
-    {
-      this.setState({to_city:this.getCityName(nextProps.fsr.to_city)})
+    switch(this.state.fsrIndex) {
+      case 1:
+      this.setState({to_city1:this.getCityName(nextProps.fsr.to_city)})
+        break;
+        case 2:
+        this.setState({departure_date2:this.getFsr().departure_date})
+          break;
+      case 5:
+      this.setState({to_city5:this.getCityName(nextProps.fsr.to_city)})
+        break;
+        case 6:
+        this.setState({departure_date6:this.getFsr().departure_date})
+          break;
+        case 9:
+        this.setState({to_city9:this.getCityName(nextProps.fsr.to_city)})
+        break;
+        case 10:
+        this.setState({departure_date10:this.getFsr().departure_date})
+        break;
+        case 13:
+        this.setState({to_city13:this.getCityName(nextProps.fsr.to_city)})
+        break;
+        case 14:
+        this.setState({departure_date14:this.getFsr().departure_date})
+        break;
+        case 17:
+        this.setState({to_city17:this.getCityName(nextProps.fsr.to_city)})
+        break;
+        case 18:
+        this.setState({departure_date18:this.getFsr().departure_date})
+        break;
+      default:
+        // code block
     }
+    // if(this.state.fsrIndex==1){
+    //   this.setState({to_city1:this.getCityName(nextProps.fsr.to_city)})
+    // }
+    // if(this.state.fsrIndex==5){
+    //   this.setState({to_city5:this.getCityName(nextProps.fsr.to_city)})
+    // }
+    // if(this.state.fsrIndex==9){
+    //   this.setState({to_city9:this.getCityName(nextProps.fsr.to_city)})
+    // }
+    // if(this.state.fsrIndex==13){
+    //   this.setState({to_city13:this.getCityName(nextProps.fsr.to_city)})
+    // }
+    // if(this.state.fsrIndex==17){
+    //   this.setState({to_city17:this.getCityName(nextProps.fsr.to_city)})
+    // }
+    // if(nextProps.fsr.to_city != this.props.fsr.to_city)
+    // {
+    //   this.setState({to_city:this.getCityName(nextProps.fsr.to_city)})
+    // }
+
+    // if(this.state.fsrIndex==2){
+    //   console.log('this.getFsr()',  this.state.fsrIndex)
+    //   this.setState({departure_date2:this.getFsr().departure_date})
+    // }
+    // if(this.state.fsrIndex==6){
+    //   console.log('this.getFsr()',  this.state.fsrIndex)
+    //   this.setState({departure_date6:this.getFsr().departure_date})
+    // }
+    // if(this.state.fsrIndex==10){
+    //   console.log('this.getFsr()',  this.state.fsrIndex)
+    //   this.setState({departure_date10:this.getFsr().departure_date})
+    // }
+    // if(this.state.fsrIndex==14){
+    //   console.log('this.getFsr()',  this.state.fsrIndex)
+    //   this.setState({departure_date14:this.getFsr().departure_date})
+    // }
+    // if(this.state.fsrIndex==18){
+    //   console.log('this.getFsr()',  this.state.fsrIndex)
+    //   this.setState({departure_date18:this.getFsr().departure_date})
+    // }
+ 
 
   }
 
@@ -448,7 +519,7 @@ class Leg extends React.Component {
   getAddATripButton=()=>{
 
     return <Button type="primary"  onClick={this.addATripButton.bind(this)}>
-              Add a trip
+              Add itinerary
             </Button>
   }
 
@@ -470,7 +541,7 @@ class Leg extends React.Component {
               <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
               <Col span={19} style={{verticalAlign:'middle'}}>
                   <div className="form-group">
-                    <Input className="form-input"  value={this.state.from_city} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
+                    <Input className="form-input"  value={this.state.from_city0} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
                   </div>
               </Col>
           </Row>
@@ -488,7 +559,7 @@ class Leg extends React.Component {
               <Col span={5}><img src={util.getIconImage("arv.png")}/></Col>
               <Col span={19} style={{verticalAlign:'middle'}}>
                   <div className="form-group">
-                    <Input className="form-input"  value={this.state.to_city} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
+                    <Input className="form-input"  value={this.state.to_city1} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
                   </div>
               </Col>
           </Row>
@@ -507,7 +578,7 @@ class Leg extends React.Component {
             <Col span={5}><i className='fa fa-calendar'/></Col>
             <Col span={19} style={{verticalAlign:'middle'}}>
                 <div className="form-group">
-                  <Input className="form-input" value={fsr.departure_date} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
+                  <Input className="form-input" value={this.state.departure_date2} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
                 </div>
             </Col>
         </Row>
@@ -590,7 +661,7 @@ class Leg extends React.Component {
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
                 <Col span={19} style={{verticalAlign:'middle'}}>
                     <div className="form-group">
-                      <Input className="form-input"  value={this.state.from_city} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
+                      <Input className="form-input"  value={this.state.from_city4} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
                     </div>
                 </Col>
             </Row>
@@ -610,7 +681,7 @@ class Leg extends React.Component {
               <Col span={5}><img src={util.getIconImage("arv.png")}/></Col>
               <Col span={19} style={{verticalAlign:'middle'}}>
                   <div className="form-group">
-                    <Input className="form-input"  value={this.state.to_city} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
+                    <Input className="form-input"  value={this.state.to_city5} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
                   </div>
               </Col>
           </Row>
@@ -622,6 +693,11 @@ class Leg extends React.Component {
         )
       }
      
+      let departure_date6
+      if(this.state.fsrIndex==6){
+        departure_date6=fsr.departure_date
+      }
+      
       if(index == 6 )
       {
         return (
@@ -631,7 +707,7 @@ class Leg extends React.Component {
             <Col span={5}><i className='fa fa-calendar'/></Col>
             <Col span={19} style={{verticalAlign:'middle'}}>
                 <div className="form-group">
-                  <Input className="form-input" value={fsr.departure_date} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
+                  <Input className="form-input" value={this.state.departure_date6} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
                 </div>
             </Col>
         </Row>
@@ -648,13 +724,13 @@ class Leg extends React.Component {
       {
         return (
          <div>
-            <p className="step-color">3nd pass</p>
+            <p className="step-color">3rd pass</p>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
                 <Col span={19} style={{verticalAlign:'middle'}}>
                     <div className="form-group">
-                      <Input className="form-input"  value={this.state.from_city} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
+                      <Input className="form-input"  value={this.state.from_city8} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
                     </div>
                 </Col>
             </Row>
@@ -675,7 +751,7 @@ class Leg extends React.Component {
               <Col span={5}><img src={util.getIconImage("arv.png")}/></Col>
               <Col span={19} style={{verticalAlign:'middle'}}>
                   <div className="form-group">
-                    <Input className="form-input"  value={this.state.to_city} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
+                    <Input className="form-input"  value={this.state.to_city9} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
                   </div>
               </Col>
           </Row>
@@ -696,7 +772,7 @@ class Leg extends React.Component {
             <Col span={5}><i className='fa fa-calendar'/></Col>
             <Col span={19} style={{verticalAlign:'middle'}}>
                 <div className="form-group">
-                  <Input className="form-input" value={fsr.departure_date} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
+                  <Input className="form-input" value={this.state.departure_date10} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
                 </div>
             </Col>
         </Row>
@@ -714,13 +790,13 @@ class Leg extends React.Component {
       {
         return (
          <div>
-           <p className="step-color">Step4</p>
+           <p className="step-color">4th pass</p>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
                 <Col span={19} style={{verticalAlign:'middle'}}>
                     <div className="form-group">
-                      <Input className="form-input"  value={this.state.from_city} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
+                      <Input className="form-input"  value={this.state.from_city12} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
                     </div>
                 </Col>
             </Row>
@@ -741,7 +817,7 @@ class Leg extends React.Component {
               <Col span={5}><img src={util.getIconImage("arv.png")}/></Col>
               <Col span={19} style={{verticalAlign:'middle'}}>
                   <div className="form-group">
-                    <Input className="form-input"  value={this.state.to_city} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
+                    <Input className="form-input"  value={this.state.to_city13} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
                   </div>
               </Col>
           </Row>
@@ -764,7 +840,7 @@ class Leg extends React.Component {
             <Col span={5}><i className='fa fa-calendar'/></Col>
             <Col span={19} style={{verticalAlign:'middle'}}>
                 <div className="form-group">
-                  <Input className="form-input" value={fsr.departure_date} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
+                  <Input className="form-input" value={this.state.departure_date14} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
                 </div>
             </Col>
         </Row>
@@ -781,13 +857,13 @@ class Leg extends React.Component {
       {
         return (
          <div>
-           <p className="step-color">Step5</p>
+           <p className="step-color">5th pass</p>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
                 <Col span={19} style={{verticalAlign:'middle'}}>
                     <div className="form-group">
-                      <Input className="form-input"  value={this.state.from_city} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
+                      <Input className="form-input"  value={this.state.from_city16} placeholder={this.getKeyword('kFromCity')} onFocus={this.fsrFocus.bind(this, index,'from_city')}  onChange={this.cityChange.bind(this, 'from_city')}/>
                     </div>
                 </Col>
             </Row>
@@ -808,7 +884,7 @@ class Leg extends React.Component {
               <Col span={5}><img src={util.getIconImage("arv.png")}/></Col>
               <Col span={19} style={{verticalAlign:'middle'}}>
                   <div className="form-group">
-                    <Input className="form-input"  value={this.state.to_city} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
+                    <Input className="form-input"  value={this.state.to_city17} placeholder={this.getKeyword('kToCity')}  onFocus={this.fsrFocus.bind(this, index,'to_city')}   onChange={this.cityChange.bind(this, 'to_city')}/>
                   </div>
               </Col>
           </Row>
@@ -830,7 +906,7 @@ class Leg extends React.Component {
             <Col span={5}><i className='fa fa-calendar'/></Col>
             <Col span={19} style={{verticalAlign:'middle'}}>
                 <div className="form-group">
-                  <Input className="form-input" value={fsr.departure_date} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
+                  <Input className="form-input" value={this.state.departure_date18} placeholder={this.getKeyword('kFromDate')} onFocus={this.fsrFocus.bind(this, index,'departure_date')}  onChange={this.fsrChange.bind(this, index,'departure_date')}/>
                 </div>
             </Col>
         </Row>
@@ -909,7 +985,7 @@ class Leg extends React.Component {
         if(!(index==7 && this.state.defaultMp.length>8)){
           return <div><p className="step-color-padding"></p><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
-          return <div><p className="step-delete" onClick={this.deleteTrip}>delete</p><div className="fsr-cell">---</div></div>
+          return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
         }
       }
 
@@ -917,18 +993,18 @@ class Leg extends React.Component {
         if(!(index==11 && this.state.defaultMp.length>12)){
           return <div><p className="step-color-padding"></p><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
-          return <div><p className="step-delete" onClick={this.deleteTrip}>delete</p><div className="fsr-cell">---</div></div>
+          return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
         }
       }
       if(index==15){
         if(!(index==15 && this.state.defaultMp.length>16)){
           return <div><p className="step-color-padding"></p><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
-          return <div><p className="step-delete" onClick={this.deleteTrip}>delete</p><div className="fsr-cell">---</div></div>
+          return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
         }
       }
       if(index==19){
-        return <div><p className="step-delete" onClick={this.deleteTrip}>delete</p> <div className="fsr-cell">---</div></div>
+        return <div style={{paddingTop: '17px'}}><p className="step-delete" onClick={this.deleteTrip}></p> <div className="fsr-cell">---</div></div>
       }
 
       
@@ -996,10 +1072,41 @@ class Leg extends React.Component {
       id:legID, fsr:{...this.getReduxDataByID(legID).fsr, ...{[key]:value}}
     })
 
-
+  console.log('fsrIndexfsrIndex',this.state.fsrIndex)
+  if(this.state.fsrIndex==0){
+    this.setState({from_city0:this.getCityName(value),isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==1){
+    this.setState({isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==4){
+    this.setState({from_city4:this.getCityName(value),isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==5){
+    this.setState({isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==8){
+    this.setState({from_city8:this.getCityName(value),isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==9){
+    this.setState({isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==12){
+    this.setState({from_city12:this.getCityName(value),isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==13){
+    this.setState({isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==16){
+    this.setState({from_city16:this.getCityName(value),isShowLegBoard:false})
+  }
+  if(this.state.fsrIndex==17){
+    this.setState({isShowLegBoard:false})
+  }
     if ((key == 'from_city') ||(key == 'to_city'))
     {
-       this.setState({[key]:this.getCityName(value), isShowLegBoard:false})
+       // this.setState({[key]:this.getCityName(value), isShowLegBoard:false})
+     // this.setState({from_city1:this.getCityName(value),isShowLegBoard:false})
     }
   }
 
@@ -1248,7 +1355,7 @@ class Leg extends React.Component {
             <Row gutter={2}>
              {
                fsrArr.map((item,index)=>{
-                 return <Col span={item} key={index}>{this.getFsrCell(index)}</Col>
+                 return <Col  span={item} key={index}>{this.getFsrCell(index)}</Col>
                })
              }
            </Row>
@@ -1353,6 +1460,13 @@ class Leg extends React.Component {
     return (
       <div className={strClass}>
         {this.getHtml()}
+      {this.getReduxDataByID('system').trip_type == 'MP' ? <div style={{textAlign:"center"}}>
+        <Button className="search-button" type="primary" >
+             search for
+            </Button>
+          </div>: ''}
+       
+
       </div>
     )
   }

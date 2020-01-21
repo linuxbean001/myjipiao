@@ -351,8 +351,25 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'hiragino_sans_gbw3';
+    src: url('../fonts/hiragino_sans_gb_w3-webfont.woff2') format('woff2'),
+         url('../fonts/hiragino_sans_gb_w3-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hiragino_sans_gbw6';
+    src: url('../fonts/hiragino_sans_gb_w6-webfont.woff2') format('woff2'),
+         url('../fonts/hiragino_sans_gb_w6-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
-  background-color: #f1f1f1
+  background-color: #f1f1f1;
 }
 
 body, body * {
@@ -362,7 +379,6 @@ body, body * {
 
 body * {
   box-sizing: border-box;
-  font-family: eurostileregular, Verdana
 }
 
 input {

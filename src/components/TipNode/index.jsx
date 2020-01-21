@@ -20,7 +20,7 @@ class TipNode extends React.Component {
     */
   constructor(props, context) {
     super(props, context);
-    
+
   }
 
   getDisplayName(code) {

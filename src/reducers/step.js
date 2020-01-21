@@ -41,7 +41,7 @@ const initialState = {
   byHash: {
     system: {
         id:'system',
-        currency:'NZD',
+        currency:'AUD',
         language:'cn',
         languageDisplay:'English',
         device: isPC()?'pc':'mb',

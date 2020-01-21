@@ -16,7 +16,7 @@ export default {
     child:0,
     travel_class:'Economy',
     is_b2c: 0,
-    currency:'NZD',
+    currency:'AUD',
     IsAutoTicket: 0,
     isDomestic: false,
     isUsa:false}
@@ -61,7 +61,7 @@ export default {
    getDomain: function() {
     if (window.location.host.indexOf("localhost") >=0)
     {
-      return "https://myjipiao.co.nz";
+      return "http://myjipiao.com.au";
     }
     else {
       return window.location.protocol + "//" + window.location.host;
