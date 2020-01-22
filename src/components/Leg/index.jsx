@@ -520,7 +520,7 @@ class Leg extends React.Component {
   getAddATripButton=()=>{
 
     return <Button type="primary"  onClick={this.addATripButton.bind(this)}>
-              Add itinerary
+              {this.getKeyword('kAddItinerary')}
             </Button>
   }
 
@@ -655,8 +655,8 @@ class Leg extends React.Component {
       if(index == 4 )
       {
         return (
-         <div>
-          <p className="step-color">2nd pass</p>
+         <div className="pass-padding">
+          <span className="step-color">2nd pass</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
@@ -724,8 +724,8 @@ class Leg extends React.Component {
       if(index==8 )
       {
         return (
-         <div>
-            <p className="step-color">3rd pass</p>
+         <div className="pass-padding">
+            <span className="step-color">3rd pass</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
@@ -790,8 +790,8 @@ class Leg extends React.Component {
       if(index ==12)
       {
         return (
-         <div>
-           <p className="step-color">4th pass</p>
+         <div className="pass-padding">
+           <span className="step-color">4th pass</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
@@ -857,8 +857,8 @@ class Leg extends React.Component {
       if(index ==16)
       {
         return (
-         <div>
-           <p className="step-color">5th pass</p>
+         <div className="pass-padding">
+           <span className="step-color">5th pass</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
@@ -998,7 +998,7 @@ class Leg extends React.Component {
 
       if(index==11){
         if(!(index==11 && this.state.defaultMp.length>12)){
-          return <div style={{paddingTop:"14px"}}><span className="step-delete" onClick={this.deleteTrip}>delete</span><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
+          return <div style={{paddingTop:"14px"}}><span className="step-delete" onClick={this.deleteTrip}>{this.getKeyword("kDelete")}</span><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
           if(this.state.defaultMp.length>16){
             return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div>
@@ -1011,7 +1011,7 @@ class Leg extends React.Component {
       }
       if(index==15){
         if(!(index==15 && this.state.defaultMp.length>16)){
-          return <div style={{paddingTop:"14px"}}><span className="step-delete" onClick={this.deleteTrip}>delete</span><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
+          return <div style={{paddingTop:"14px"}}><span className="step-delete" onClick={this.deleteTrip}>{this.getKeyword("kDelete")}</span><div className="fsr-btn-cell">{this.getAddATripButton()}</div></div>
         }else{
           return <div style={{paddingTop:'35px'}}><div className="fsr-cell">---</div>
           {/* <p className="step-delete" onClick={this.deleteTrip}>delete</p> */}
@@ -1019,7 +1019,7 @@ class Leg extends React.Component {
         }
       }
       if(index==19){
-        return <div style={{paddingTop: '17px'}}><p className="step-delete" onClick={this.deleteTrip}></p> <div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>delete</p></div>
+        return <div style={{paddingTop: '17px'}}><p className="step-delete" onClick={this.deleteTrip}></p> <div className="fsr-cell">---</div><p className="step-delete" onClick={this.deleteTrip}>{this.getKeyword("kDelete")}</p></div>
       }
 
       
@@ -1477,7 +1477,7 @@ class Leg extends React.Component {
         {this.getHtml()}
       {this.getReduxDataByID('system').trip_type == 'MP' ? <div style={{textAlign:"center"}}>
         <Button className="search-button" type="primary" >
-             search for
+        {this.getKeyword("kSearch")}
             </Button>
           </div>: ''}
        
