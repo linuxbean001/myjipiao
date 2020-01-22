@@ -656,7 +656,7 @@ class Leg extends React.Component {
       {
         return (
          <div className="pass-padding">
-          <span className="step-color">2nd pass</span>
+          <span className="step-color">2nd {this.getKeyword('kLeg')}</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
@@ -725,7 +725,7 @@ class Leg extends React.Component {
       {
         return (
          <div className="pass-padding">
-            <span className="step-color">3rd pass</span>
+            <span className="step-color">3rd {this.getKeyword("kCourse")}</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
@@ -791,7 +791,7 @@ class Leg extends React.Component {
       {
         return (
          <div className="pass-padding">
-           <span className="step-color">4th pass</span>
+           <span className="step-color">4th</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
@@ -858,7 +858,7 @@ class Leg extends React.Component {
       {
         return (
          <div className="pass-padding">
-           <span className="step-color">5th pass</span>
+           <span className="step-color">5th</span>
             <div className="fsr-cell">
             <Row>
                 <Col span={5}><img src={util.getIconImage("dep.png")}/></Col>
